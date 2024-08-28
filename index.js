@@ -3,7 +3,7 @@ import { STOCK_MODEL } from "./model/stock_model.js";
 import { connectDB } from "./db/db_connect.js";
 const GET_STOCK_DB = express();
 GET_STOCK_DB.use(express.json());
-const PORT = process.env.PORT;
+const PORT = 5000
 GET_STOCK_DB.post("/get-stock-db", async (req, res) => {
   await connectDB();
   const { userID } = await req.body;
