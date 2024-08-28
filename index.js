@@ -13,6 +13,6 @@ GET_STOCK_DB.post("/get-stock-db", async (req, res) => {
   res.status(201).send(result);
 });
 
-GET_STOCK_DB.listen( , "0.0.0.0" , ()=>{
+GET_STOCK_DB.listen( PORT , "0.0.0.0" , ()=>{
   console.log("Service runnig");
 });
