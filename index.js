@@ -4,7 +4,7 @@ import { connectDB } from "./db/db_connect.js";
 const GET_STOCK_DB = express();
 GET_STOCK_DB.use(express.json());
 const PORT = 4000
-GET_STOCK_DB.post("/get-stock-db", async (req, res) => {
+GET_STOCK_DB.get("/get-stock-db", async (req, res) => {
   await connectDB();
   const { userID } = await req.body;
   console.log("User id", userID);
