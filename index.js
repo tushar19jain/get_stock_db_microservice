@@ -3,7 +3,7 @@ import { STOCK_MODEL } from "./model/stock_model.js";
 import { connectDB } from "./db/db_connect.js";
 const GET_STOCK_DB = express();
 GET_STOCK_DB.use(express.json());
-
+const PORT = process.env.PORT;
 GET_STOCK_DB.post("/get-stock-db", async (req, res) => {
   await connectDB();
   const { userID } = await req.body;
@@ -13,4 +13,6 @@ GET_STOCK_DB.post("/get-stock-db", async (req, res) => {
   res.status(201).send(result);
 });
 
-GET_STOCK_DB.listen(process.env.PORT || 4000);
+GET_STOCK_DB.listen( , "0.0.0.0" , ()=>{
+  console.log("Service runnig");
+});
